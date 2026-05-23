@@ -81,7 +81,8 @@ const Reports = () => {
               <p style={styles.cardLabel}>Favourite</p>
               <p style={styles.cardValue}>{report.favourite?.name || "—"}</p>
               <p style={styles.cardSub}>
-                Avg rating: {report.favourite?.average_rating || 0}
+                Avg rating:{" "}
+                {parseFloat(report.favourite?.average_rating || 0).toFixed(2)}
               </p>
             </div>
           </div>
