@@ -8,7 +8,11 @@ const reportRoutes = require("./routes/reports");
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173" }));
+const allowedOrigins = [process.env.CLIENT_URL, "http://localhost:5173"].filter(
+  Boolean,
+);
+
+app.use(cors({ origin: allowedOrigins }));
 app.use(express.json());
 
 // Health check
